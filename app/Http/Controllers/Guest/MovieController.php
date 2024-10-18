@@ -9,14 +9,9 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     public function index(){
+
         $movies = Movie::all();
 
-        $firstName = 'Gino';
-        $lastName = 'Paoli';
-
-        return view('welcome', 'movies', [
-            'firstName' => $firstName,
-            'lastName' => $lastName,
-        ]);
+        return view('welcome', compact('movies'));
     }
 }
